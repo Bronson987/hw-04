@@ -9,6 +9,7 @@
   --text-light: #ffffff;
 }
 
+/* 1. СКИДАННЯ СТАНДАРТНИХ НАЛАШТУВАНЬ БРАУЗЕРА */
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +20,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* ==================== СТИЛІ ДЛЯ ЛЕНДІНГУ (ЛР1) ==================== */
 body:not(.table-page) {
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -26,11 +28,12 @@ body:not(.table-page) {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* 2. СТИЛІ ДЛЯ ШАПКИ (HEADER) */
 .header {
   padding: 20px 0;
   background-color: rgba(15, 23, 42, 0.9);
@@ -95,6 +98,7 @@ body:not(.table-page) {
   transform: translateY(-2px);
 }
 
+/* 3. ГОЛОВНИЙ ЕКРАН (HERO SECTION) */
 .hero {
   padding: 80px 0 60px 0;
   text-align: center;
@@ -145,6 +149,7 @@ body:not(.table-page) {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
+/* 4. СЕКЦІЯ ПЕРЕВАГ  */
 .features {
   padding: 80px 0;
 }
@@ -159,16 +164,16 @@ body:not(.table-page) {
 
 .features-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
-  gap: 30px !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 40px !important;
 }
 
 .feature-card {
   text-align: center !important;
-  padding: 40px !important;
-  min-height: 250px;
+  padding: 50px 30px 50px !important;
   background-color: var(--bg-card) !important;
   border-radius: 16px !important;
+  position: relative !important;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease !important;
@@ -186,6 +191,7 @@ body:not(.table-page) {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  position: relative !important;
 }
 
 .icon-wrapper img {
@@ -195,9 +201,23 @@ body:not(.table-page) {
   transform: scale(2.2);
 }
 
+.icon-wrapper::before,
+.icon-wrapper::after,
+.feature-card::before,
+.feature-card::after,
+.feature-card h3::before,
+.feature-card h3::after,
+.feature-card p::before,
+.feature-card p::after {
+  display: none !important;
+  content: "" !important;
+  background: none !important;
+}
+
 .feature-card h3 {
   font-size: 24px !important;
   font-weight: 700 !important;
+  margin-top: 0 !important;
   margin-bottom: 15px !important;
   color: var(--text-light) !important;
 }
@@ -206,8 +226,10 @@ body:not(.table-page) {
   color: var(--text-main) !important;
   font-size: 17px !important;
   line-height: 1.6 !important;
+  font-weight: 400 !important;
 }
 
+/* 5. ПІДВАЛ (FOOTER) */
 .footer {
   padding: 40px 0;
   border-top: 1px solid var(--bg-card);
@@ -219,6 +241,7 @@ body:not(.table-page) {
   font-size: 14px;
 }
 
+/* 6. СЕКЦІЯ ФОРМИ ПІДПИСКИ */
 .subscribe {
   padding: 60px 0 100px 0;
   text-align: center;
@@ -274,7 +297,13 @@ body:not(.table-page) {
   border: 1px solid #334155;
   border-radius: 8px;
   color: var(--text-light);
+  font-size: 15px;
   outline: none;
+  transition: border-color 0.3s;
+}
+
+.subscribe-form input[type="email"]:focus {
+  border-color: var(--primary-color);
 }
 
 .btn-submit {
@@ -283,16 +312,30 @@ body:not(.table-page) {
   border: none;
   border-radius: 8px;
   padding: 0 30px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
+.btn-submit:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ==================== СТИЛІ ДЛЯ ТАБЛИЦІ (ЛР2) ==================== */
 body.table-page {
   padding: 20px;
   background-color: #f9f9f9;
   color: #000000;
 }
 
-body.table-page .main-table {
+body.table-page h1 {
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.main-table {
   border-collapse: collapse;
   width: 100%;
   max-width: 900px;
@@ -300,12 +343,20 @@ body.table-page .main-table {
   margin: 0 auto;
 }
 
-body.table-page .main-table td {
+.main-table td {
   border: 2px solid #000000;
   padding: 15px;
   text-align: center;
   vertical-align: middle;
+  font-size: 14px;
+  width: 16.66%;
+  color: #000000;
   background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+}
+
+.main-table td:has(img) {
+  padding: 0;
 }
 
 body.table-page .main-table td > img {
@@ -314,28 +365,111 @@ body.table-page .main-table td > img {
   display: block !important;
 }
 
+body.table-page .main-table td > img[src*="pic1"] {
+  object-fit: contain !important;
+  padding: 4px !important;
+  background-color: #ffffff !important;
+}
+
+body.table-page .main-table td > img[src*="pic3"] {
+  object-fit: cover !important;
+  padding: 0 !important;
+}
+
 .bg-cell {
   background-image: url("../images/bg.jpg") !important;
   background-size: cover;
   background-position: center;
+  color: #000000 !important;
+  font-weight: bold;
 }
 
 .red-text {
   color: red !important;
   font-weight: bold;
 }
+
 .blue-text {
   color: blue !important;
   font-weight: bold;
 }
 
+.password-form {
+  background-color: #bfe2ee;
+  border: 1px solid #7cb3c6;
+  padding: 10px;
+  margin: 0 auto 10px;
+  max-width: 400px;
+  text-align: left;
+}
+
+.password-form label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+.form-group {
+  display: flex;
+  gap: 5px;
+}
+
+.form-group input[type="password"] {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.form-group input[type="submit"] {
+  background-color: #e1e1e1;
+  border: 1px solid #7a7a7a;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #000000;
+}
+
 .inner-table {
   width: 100%;
+  margin-top: 5px;
   table-layout: fixed;
   border-collapse: collapse;
 }
 
 .inner-table td {
   border: 1px solid #000000 !important;
+  padding: 0 !important;
+  width: 33.33% !important;
   height: 85px !important;
+  max-height: 85px !important;
+  overflow: hidden;
+  background-color: #ffffff !important;
+}
+
+.inner-table td img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  padding: 3px !important;
+  background-color: #ffffff !important;
+  display: block;
+}
+
+ol,
+.square-list {
+  text-align: left;
+  padding-left: 20px;
+  color: #000000;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .subscribe-form {
+    flex-direction: column;
+  }
+  .btn-submit {
+    padding: 12px 0;
+  }
 }
