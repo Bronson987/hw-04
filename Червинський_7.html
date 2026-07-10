@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Варіант №7 - Таблиця</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="table-page">
+    <h1>Варіант №7</h1>
+
+    <table class="main-table">
+      <tr>
+        <td><a href="#">Гіперпосилання 1</a></td>
+        <td></td>
+        <td colspan="2">Я студент<sup>ХНЕУ</sup></td>
+        <td></td>
+        <td><a href="#">Гіперпосилання 2</a></td>
+      </tr>
+
+      <tr>
+        <td><img src="images/pic1.jpg" alt="Маркетинг" /></td>
+        <td rowspan="2"></td>
+        <td><img src="images/pic3.jpg" alt="Аудит" /></td>
+        <td colspan="3" class="bg-cell">Фоновий рисунок</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2">
+          <ol type="A">
+            <li><u>Маркетинг</u></li>
+            <li><i>Менеджмент</i></li>
+            <li><b>Аудит</b></li>
+          </ol>
+        </td>
+        <td colspan="3" rowspan="2">
+          <div class="center-content">
+            <form class="password-form">
+              <label for="pass">Введіть пароль:</label>
+              <div class="form-group">
+                <input type="password" id="pass" name="password" />
+                <input type="submit" value="Ввести пароль" />
+              </div>
+            </form>
+
+            <table class="inner-table">
+              <tr>
+                <td><img src="images/pic1.jpg" alt="Рисунок 1" /></td>
+                <td></td>
+                <td><img src="images/pic3.jpg" alt="Рисунок 3" /></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+        <td class="red-text">Червоний</td>
+      </tr>
+
+      <tr>
+        <td><img src="images/pic2.jpg" alt="Менеджмент" /></td>
+        <td>&copy; 2024</td>
+      </tr>
+
+      <tr>
+        <td class="red-text">Червоний</td>
+        <td colspan="2"><a href="#">Гіперпосилання 3</a></td>
+        <td></td>
+        <td class="blue-text">Синій</td>
+        <td>
+          <ul class="square-list">
+            <li>Реклама</li>
+            <li><i>Медіа</i></li>
+            <li>Бізнес</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

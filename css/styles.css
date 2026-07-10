@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap");
+
+:root {
+  --primary-color: #ef4444;
+  --primary-hover: #df3333;
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #94a3b8;
+  --text-light: #ffffff;
+}
+
+/* 1. СКИДАННЯ СТАНДАРТНИХ НАЛАШТУВАНЬ БРАУЗЕРА */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* ==================== СТИЛІ ДЛЯ ЛЕНДІНГУ (ЛР1) ==================== */
+body:not(.table-page) {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 2. СТИЛІ ДЛЯ ШАПКИ (HEADER) */
+.header {
+  padding: 20px 0;
+  background-color: rgba(15, 23, 42, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-list a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-list a:hover {
+  color: var(--text-light);
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-secondary {
+  color: var(--text-light);
+}
+
+.btn-secondary:hover {
+  color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* 3. ГОЛОВНИЙ ЕКРАН (HERO SECTION) */
+.hero {
+  padding: 80px 0 60px 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  line-height: 1.2;
+}
+
+.hero-text {
+  color: var(--text-main);
+  font-size: 18px;
+  max-width: 750px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 14px 40px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-bottom: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.4);
+  transform: scale(1.04);
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* 4. СЕКЦІЯ ПЕРЕВАГ  */
+.features {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--text-light);
+  font-weight: 800;
+}
+
+.features-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 40px !important;
+}
+
+.feature-card {
+  text-align: center !important;
+  padding: 50px 30px 50px !important;
+  background-color: var(--bg-card) !important;
+  border-radius: 16px !important;
+  position: relative !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4) !important;
+}
+
+.icon-wrapper {
+  width: 110px !important;
+  height: 110px !important;
+  margin: 0 auto 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.icon-wrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  transform: scale(2.2);
+}
+
+.icon-wrapper::before,
+.icon-wrapper::after,
+.feature-card::before,
+.feature-card::after,
+.feature-card h3::before,
+.feature-card h3::after,
+.feature-card p::before,
+.feature-card p::after {
+  display: none !important;
+  content: "" !important;
+  background: none !important;
+}
+
+.feature-card h3 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
+  color: var(--text-light) !important;
+}
+
+.feature-card p {
+  color: var(--text-main) !important;
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+/* 5. ПІДВАЛ (FOOTER) */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--bg-card);
+  text-align: center;
+}
+
+.copyright {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* 6. СЕКЦІЯ ФОРМИ ПІДПИСКИ */
+.subscribe {
+  padding: 60px 0 100px 0;
+  text-align: center;
+}
+
+.subscribe-box {
+  background-color: var(--bg-card);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.subscribe-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+
+.subscribe-text {
+  color: var(--text-main);
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-field {
+  flex: 1;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.subscribe-form input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: var(--bg-dark);
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: var(--text-light);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.subscribe-form input[type="email"]:focus {
+  border-color: var(--primary-color);
+}
+
+.btn-submit {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  padding: 0 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ==================== СТИЛІ ДЛЯ ТАБЛИЦІ (ЛР2) ==================== */
+body.table-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #000000;
+}
+
+body.table-page h1 {
+  color: #000000;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.main-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
+.main-table td {
+  border: 2px solid #000000;
+  padding: 15px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+  width: 16.66%;
+  color: #000000;
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+}
+
+.main-table td:has(img) {
+  padding: 0;
+}
+
+body.table-page .main-table td > img {
+  width: 100% !important;
+  height: 140px !important;
+  display: block !important;
+}
+
+body.table-page .main-table td > img[src*="pic1"] {
+  object-fit: contain !important;
+  padding: 4px !important;
+  background-color: #ffffff !important;
+}
+
+body.table-page .main-table td > img[src*="pic3"] {
+  object-fit: cover !important;
+  padding: 0 !important;
+}
+
+.bg-cell {
+  background-image: url("../images/bg.jpg") !important;
+  background-size: cover;
+  background-position: center;
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+.red-text {
+  color: red !important;
+  font-weight: bold;
+}
+
+.blue-text {
+  color: blue !important;
+  font-weight: bold;
+}
+
+.password-form {
+  background-color: #bfe2ee;
+  border: 1px solid #7cb3c6;
+  padding: 10px;
+  margin: 0 auto 10px;
+  max-width: 400px;
+  text-align: left;
+}
+
+.password-form label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+.form-group {
+  display: flex;
+  gap: 5px;
+}
+
+.form-group input[type="password"] {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.form-group input[type="submit"] {
+  background-color: #e1e1e1;
+  border: 1px solid #7a7a7a;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.inner-table {
+  width: 100%;
+  margin-top: 5px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.inner-table td {
+  border: 1px solid #000000 !important;
+  padding: 0 !important;
+  width: 33.33% !important;
+  height: 85px !important;
+  max-height: 85px !important;
+  overflow: hidden;
+  background-color: #ffffff !important;
+}
+
+.inner-table td img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  padding: 3px !important;
+  background-color: #ffffff !important;
+  display: block;
+}
+
+ol,
+.square-list {
+  text-align: left;
+  padding-left: 20px;
+  color: #000000;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .subscribe-form {
+    flex-direction: column;
+  }
+  .btn-submit {
+    padding: 12px 0;
+  }
+}
